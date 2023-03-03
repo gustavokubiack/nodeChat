@@ -22,7 +22,7 @@ chat = async () => {
             messages: messagesArray,
         });
         messagesArray.push({role: "assistant", content: completion.data.choices[0].message.content});
-        console.log(completion.data.choices[0].message.content);  
+        console.log("Bot:", completion.data.choices[0].message.content);  
         if (userInput === "exit" || userInput === 'q'){
             process.exit();
         }  
