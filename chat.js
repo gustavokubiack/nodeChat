@@ -11,7 +11,8 @@ const openai = new OpenAIApi(configuration);
 
 console.log("Welcome to the nodeChat, an app that uses OpenAI's GPT-3 to chat with you.");
 
-async function chat(){
+
+chat = async () => {
     while (true){
         const completion = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
@@ -24,3 +25,4 @@ async function chat(){
 }
 chat();
 
+// To do: criar models e armazenar os dados em uma base de dados para que o chat possa "lembrar" de conversas anteriores.
