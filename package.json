@@ -12,7 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
-    "nodemon": "^2.0.21",
     "openai": "^3.2.1",
     "prompt-sync": "^4.2.0"
   }

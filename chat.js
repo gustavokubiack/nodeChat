@@ -9,20 +9,25 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-console.log("Welcome to the nodeChat, an app that uses OpenAI's GPT-3 to chat with you.");
+console.log("Welcome to the nodeChat, an app that uses OpenAI's GPT-3 to chat with you. If you want to exit the chat, type 'exit' or 'q'.");
 
 
 chat = async () => {
+    const messagesArray = [];
     while (true){
+        const userInput = prompt("You: ");
+        messagesArray.push({role: "user", content: userInput});
         const completion = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
-            messages: [{role: "user", content: prompt("You: ")}],
+            messages: messagesArray,
         });
-
-        console.log(completion.data.choices[0].message.content);    
+        messagesArray.push({role: "assistant", content: completion.data.choices[0].message.content});
+        console.log(completion.data.choices[0].message.content);  
+        if (userInput === "exit" || userInput === 'q'){
+            process.exit();
+        }  
     }
 
 }
-chat();
 
-// To do: criar models e armazenar os dados em uma base de dados para que o chat possa "lembrar" de conversas anteriores.
+chat();
