@@ -9,6 +9,14 @@ A simple chat application using ChatGPT API.
 ## Installation
 
 - Clone the repository
+- Run `cd nodeChat` to enter the directory
+- Create a `.env` file and add the following environment variables that you can get from [ChatGPT](https://platform.openai.com/account/api-keys)
+
+```
+OPENAI_API_KEY
+
+```
+
 - Run `npm install` to install the dependencies
 
 ## Usage
