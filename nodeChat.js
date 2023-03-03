@@ -1,0 +1,1 @@
+// To Do: fazer uma lista de informações sobre o nodeChat, versão, descrição, help.

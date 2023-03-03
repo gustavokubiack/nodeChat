@@ -4,7 +4,6 @@ const prompt = require('prompt-sync')();
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
-    organization: "org-c8X6E0TZSopeTFCta4nVp9m3",
     apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
